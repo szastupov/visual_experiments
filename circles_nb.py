@@ -1,7 +1,7 @@
 from nodebox.graphics import *
 from random import randint, choice, uniform
 
-SIZE = (1024, 768)
+SIZE = (1280, 720)
 
 class Circle(object):
 	def __init__(self):

@@ -8,9 +8,7 @@ def setup():
 
 ANGLE = 0.0
 eyeBall = 800
-retina = 420
 sretina = 200
-eyeColor = 200
 
 def draw():
 	global ANGLE
@@ -31,8 +29,6 @@ def draw():
 	ty = map(mouse.y, 0, SIZE[1], -lmax, lmax)
 	translate(tx, ty)
 
-	fill(eyeColor)
-	ellipse(0, 0, retina, retina)
 	fill(0)
 	ellipse(0, 0, sretina, sretina)
 
@@ -44,14 +40,14 @@ def draw():
 	box(80)
 	popMatrix()
 
-	rsize = 100
-	#fill(eyeColor)
-	for i in range(12):
-		fill(i*(255/12))
+	rsize = 55
+	rcount = 48
+	for i in range(rcount):
+		fill(i*(255/rcount))
 		pushMatrix()
-		rotateZ(i*PI/6 - ANGLE/10)
-		translate(100, 0, 0)
-		rect(0, -rsize/2, rsize, rsize)
+		rotateZ(i*PI*2/rcount + ty/(lmax*4))
+		translate(0, 150, 0)
+		triangle(-rsize, rsize, 0, -rsize, rsize, rsize)
 		popMatrix()
 
 run()
